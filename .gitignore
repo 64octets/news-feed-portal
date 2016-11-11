@@ -1,0 +1,12 @@
+./idea
+*sublime*
+Makefile
+npm-debug.log
+/node_modules/
+/public/static/bower_components/*
+/vendor/
+/etc/app-conf.php
+/etc/propel.php
+/logs/*
+!/logs/README.md
+/tests/etc/propel.php

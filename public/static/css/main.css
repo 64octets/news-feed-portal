@@ -1,0 +1,13 @@
+.feed-item {
+    padding: 5px;
+    margin: 5px 0;
+    margin: 0px;
+    background: #eee;
+}
+
+.feed-item img {
+    margin: 0 auto;
+    display: block;
+    width: 450px;
+    height: 292px;
+}

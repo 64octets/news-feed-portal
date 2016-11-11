@@ -1,0 +1,32 @@
+{
+  "name": "news-feed",
+  "version": "1.0.0",
+  "description": "News Feed",
+  "repository": "",
+  "author": [
+    {
+      "name": "Sergey Podgornyy",
+      "email": "sergey.podgornyy@yahoo.de"
+    }
+  ],
+  "private": true,
+  "scripts": {
+    "lint": "eslint public/static/js/",
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "json-loader": "^0.5.4",
+    "relaxed-json": "^0.2.8"
+  },
+  "devDependencies": {
+    "eslint": "^1.9.0",
+    "eslint-loader": "^1.1.1",
+    "eslint-plugin-standard": "*",
+    "file-loader": "^0.8.4",
+    "json-loader": "*",
+    "raw-loader": "^0.5.1",
+    "style-loader": "*",
+    "url-loader": "*"
+  }
+}

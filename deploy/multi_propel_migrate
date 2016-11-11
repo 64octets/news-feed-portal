@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+MIGRATIONS=0
+CONF_DIR="/etc"
+ALL_MIGRATE_UP="All migrations were already executed - nothing to migrate."
+NOTHING_TO_REVERSE="No migration were ever executed on this database - nothing to reverse."
+
+migrate() {
+    local res=`./vendor/bin/propel $1 --config-dir .$CONF_DIR`
+    echo "$res"
+    if [[ $res = $ALL_MIGRATE_UP || $res = $NOTHING_TO_REVERSE ]]; then
+        return 1
+    fi
+}
+
+run_migrations() {
+    case $2 in
+        "main") CONF_DIR="/etc";;
+        "test") CONF_DIR="/tests/etc";;
+    esac
+
+    while migrate $1 $2; do
+        let MIGRATIONS+=1
+    done
+    printf "\n -------\033[32m migrate $MIGRATIONS  migrations \033[0m------- \n"
+}
+
+display_help() {
+  cat <<-EOF
+
+  Usage: bash multi_propel_migrate [args]
+
+  Options:
+
+    -h, --help      Display help information
+    up              Execute all migrations
+    down            Reverse all migrations
+
+EOF
+}
+
+while test $# -ne 0; do
+    case $1 in
+      -h|--help|help) display_help; exit ;;
+      up|down) run_migrations $1 $2; exit ;;
+    esac
+done

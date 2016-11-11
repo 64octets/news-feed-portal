@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'slimOptions' => [
+        'debug'                 => false,
+        'mode'                  => 'production',
+        'templates.path'        => __DIR__ . '/../public/static',
+        'cookies.encrypt'       => true,
+        'cookies.secret_key'    => 'COOKIES_SECRET',
+        'cookies.cipher'        => MCRYPT_RIJNDAEL_256,
+        'cookies.cipher_mode'   => MCRYPT_MODE_CBC,
+        'cookies.httponly'      => true
+    ],
+    'loggerOptions' => [
+        'name'                  => 'Game-Portal',
+        'logDir'                => __DIR__ . '/../logs',
+        'filepath'              => __DIR__ . '/../logs/app.log',
+        'propelpath'            => __DIR__ . '/../logs/propel.log',
+    ],
+    'cacheConfig'   => [
+        'cacheSystem'   => 'memcached',
+        'memcachedHost' => 'localhost',
+        'memcachedPort' => 11211,
+    ],
+    'headerAccessToken' => [
+        'name' => 'NEWS-FEED-TOKEN',
+        'values' => [
+            'NEWSFEED'  => '5f17b62a9d9ed5c7e50cabcf89908651'
+        ],
+    ],
+    'pidDir' => '/tmp',
+    'debugMode' => false,
+];

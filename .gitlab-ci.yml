@@ -1,0 +1,29 @@
+# client:
+#   script:
+#     - apt-get update && apt-get install -y nodejs npm
+#     - service npm start
+#     # - npm install v0.12.0
+#     - npm install
+#     - npm test
+
+# phpunit:
+#   script:
+#     - debconf-set-selections <<< 'mysql-server mysql-server/root_password password password'
+#     - debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password password'
+#     - apt-get update && apt-get -y install php5 php5-cli php5-common php5-curl php5-mcrypt mysql-server php5-mysql
+#     - curl -sS https://getcomposer.org/installer | php
+#     - php composer.phar install
+#     - cp etc/app-conf.php.test etc/app-conf.php
+#     - cp tests/etc/propel.php.demo tests/etc/propel.php
+#     - service mysql start
+# #    - mysqladmin -uroot -ppassword drop database if exists news_feed_db -f
+#     - mysqladmin -uroot -ppassword create news_feed_db
+#     - bash deploy/multi_propel_migrate up test
+#     - php vendor/bin/phpunit
+
+phpcs:
+  script:
+    - apt-get update && apt-get -y install php5 php5-cli php5-common php5-curl
+    - curl -sS https://getcomposer.org/installer | php
+    - php composer.phar install
+    - php vendor/bin/phpcs --encoding=utf8

@@ -1,0 +1,54 @@
+body {
+    font-family: 'Capriola', sans-serif;
+    background: #DAD6CC;
+}
+
+.wrap {
+    margin: 0 auto;
+    min-width: 400px;
+}
+
+.logo h1 {
+    font-size: 200px;
+    text-align: center;
+    margin-bottom: 1px;
+    text-shadow: 4px 4px 1px white;
+}
+
+.cl-404 .logo h1 {
+    color: #2C6CA7;
+}
+
+.cl-500 .logo h1 {
+	color: #A72C2C;
+}
+
+.logo p {
+    color: #B1A18D;
+    margin-top: 1px;
+    text-align: center;
+}
+
+.logo p.info {
+    font-size: 24px;
+}
+
+.logo p.status-description {
+    font-size: 14px;
+}
+
+.sub a {
+    text-decoration: none;
+    padding: 5px;
+    font-size: 14px;
+    font-family: arial, serif;
+    font-weight: bold;
+}
+
+.cl-404 .sub a {
+    color: #2C6CA7;
+}
+
+.cl-500 .sub a {
+	color: #A72C2C;
+}

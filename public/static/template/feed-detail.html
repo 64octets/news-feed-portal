@@ -1,0 +1,11 @@
+    <div class="container main" data-page="main" style="margin-top: 70px">
+        <h2 class="text-center">{{feed.Title}}</h2>
+        <p class="text-right"><i>Published by {{feed.Author}}</i></p>
+        <br>
+        <video width="800" height="600" controls="controls" poster="{{feed.Thumbnail}}" style="margin: 0 auto">
+            <source ng-src="{{feed.Source | trusted}}" type="video/mp4">
+            Your browser does not support tag video
+            <a href="{{feed.Source}}">download video</a>.
+        </video>
+        <h4>{{feed.Description}}</h4>
+    </div>
